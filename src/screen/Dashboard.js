@@ -1,4 +1,4 @@
-import { View, Text, TextInput, StyleSheet, ScrollView,Image } from "react-native";
+import { View, Text, TextInput, StyleSheet, ScrollView, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 // import { useNavigation } from '@react-navigation/native';
@@ -8,13 +8,20 @@ import { colorss } from '../utils/colorss';
 // import { faCaretDown } from "@fortawesome/free-solid-svg-icons/faCaretDown"
 // import { faPerson } from "@fortawesome/free-solid-svg-icons/faPerson"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useNavigation } from "@react-navigation/native";
+
 import Homescreen from "./Homescreen";
 import Loginscreenn from "./Loginscreenn";
+import Fooddelivery from "./Fooddelivery";
+import Instamart from "./Instamart";
+import Dineout from "./Dineout";
+import Reorder from "./Reorder";
+import Genie from "./Genie";
 
 const Dashboard = () => {
 
 
-    
+
     const Tab = createBottomTabNavigator();
 
 
@@ -22,9 +29,9 @@ const Dashboard = () => {
 
     return (
 
-    
+
         <ScrollView contentContainerStyle={styles.container}>
-   
+
 
             <View style={styles.contaniar}>
 
@@ -47,14 +54,18 @@ const Dashboard = () => {
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
 
                 </View>
-
+                <View style={styles.centeremoji}>
+                    <Image source={require("../assets/emoji.png")} style={styles.emojipic}></Image>
+                    <Text style={styles.emojitext}>Welcome Hitendrasinh</Text>
+                    <Text style={styles.emojitextsecond}>Enjoy flat 50% off+ free delivery</Text>
+                </View>
                 <View style={styles.bodypart}>
                     <View style={styles.bodyfirst}>
                         <View style={styles.bodycontaniar}>
                             <Text style={styles.storehader}>FOOD DELIVERY</Text>
                             <Text style={styles.restaurants}>FROM RESTAURANTS</Text>
                             <Text style={styles.offer}>UP TO 60% OFF</Text>
-                            <Image source={require("../assets/fooddelivery.jpg")}style={styles.fooddeliveryimg}></Image>
+                            <Image source={require("../assets/fooddelivery.jpg")} style={styles.fooddeliveryimg}></Image>
 
                         </View>
 
@@ -62,7 +73,7 @@ const Dashboard = () => {
                             <Text style={styles.storehader}>INSTAMART</Text>
                             <Text style={styles.restaurants}>GET ANYTHING INSTANTLY</Text>
                             <Text style={styles.offer}>FREE DEL AT RS.49</Text>
-                            <Image source={require("../assets/instamart.jpg")}style={styles.instamart}></Image>
+                            <Image source={require("../assets/instamart.jpg")} style={styles.instamart}></Image>
 
                         </View>
                     </View>
@@ -71,32 +82,40 @@ const Dashboard = () => {
                             <Text style={styles.storehader}>DINEOUT</Text>
                             <Text style={styles.restaurants}>EAT OUT & SAVE MORE</Text>
                             <Text style={styles.offer}>UP TO 50% OFF</Text>
-                            <Image source={require("../assets/dineout.png")}style={styles.dineout}></Image>
+                            <Image source={require("../assets/dineout.png")} style={styles.dineout}></Image>
 
 
                         </View>
                         <View style={styles.bodycontaniar}>
                             <Text style={styles.storehader}>GENIE</Text>
                             <Text style={styles.restaurants}>PICK-UP & DROP</Text>
-                            <Image source={require("../assets/genie.png")}style={styles.instamart}></Image>
+                            <Image source={require("../assets/genie.png")} style={styles.instamart}></Image>
 
                         </View>
+                    </View>
+
+                    <View>
+                        <Text>live</Text>
+                        <Text>it up!</Text>
+                        <Text>Crafted with in Bengaluru, India</Text>
                     </View>
                 </View>
 
 
             </View>
+
+
             <Tab.Navigator>
-            <Tab.Screen name="Home" component={Homescreen} />
-      <Tab.Screen name="Login" component={Loginscreenn}/>
-                
-      {/* <Tab.Screen name="Swiggy" component={swiggy} />
-      <Tab.Screen name="Food" component={Food} />
-      <Tab.Screen name="Instamart" component={Instamart} />
-      <Tab.Screen name="Dineout" component={Dineout} />
-      <Tab.Screen name="Reorder" component={Reorder} />
-      <Tab.Screen name="Genie" component={Genie} /> */}
-    </Tab.Navigator>
+
+
+                <Tab.Screen name="Swiggy" component={Dashboard} />
+
+                <Tab.Screen name="Food" component={Fooddelivery} />
+                <Tab.Screen name="Instamart" component={Instamart} />
+                <Tab.Screen name="Dineout" component={Dineout} />
+                <Tab.Screen name="Reorder" component={Reorder} />
+                <Tab.Screen name="Genie" component={Genie} />
+            </Tab.Navigator>
         </ScrollView>
 
     )
@@ -109,7 +128,7 @@ const styles = StyleSheet.create
     ({
         // container: {
 
-        
+
 
         // },
 
@@ -133,7 +152,7 @@ const styles = StyleSheet.create
             padding: 10,
             borderWidth: 1,
             borderRadius: 15,
-            backgroundColor:colorss.white,
+            backgroundColor: colorss.white,
 
 
         },
@@ -147,13 +166,13 @@ const styles = StyleSheet.create
             height: 175,
             borderRadius: 15,
             width: 135,
-            backgroundColor:colorss.white,
-            borderColor:colorss.white,
+            backgroundColor: colorss.white,
+            borderColor: colorss.white,
         },
 
         bodyfirst: {
 
-            marginTop: 250,
+            marginTop: 10,
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-around"
@@ -177,34 +196,46 @@ const styles = StyleSheet.create
         },
 
         restaurants: {
-          fontSize:10,
-          
-        },
-        offer:{
-            fontSize:10,
-            fontWeight:"bold",
-        },
-        fooddeliveryimg:{
-            marginTop:18,
-            marginLeft:26,
-            alignItems:"flex-end",
-            height:90,
-            width:95,
-            
-        },
-        instamart:{
-            marginTop:5,
-            marginLeft:26,
-            alignItems:"flex-end",
-            height:90,
-            width:95,
-        },
-        dineout:{
-            marginTop:16,
-            marginLeft:25,
-            height:80,
-            width:100,
+            fontSize: 10,
 
+        },
+        offer: {
+            fontSize: 10,
+            fontWeight: "bold",
+        },
+        fooddeliveryimg: {
+            marginTop: 18,
+            marginLeft: 26,
+            alignItems: "flex-end",
+            height: 90,
+            width: 95,
+
+        },
+        instamart: {
+            marginTop: 5,
+            marginLeft: 26,
+            alignItems: "flex-end",
+            height: 90,
+            width: 95,
+        },
+        dineout: {
+            marginTop: 16,
+            marginLeft: 25,
+            height: 80,
+            width: 100,
+
+        },
+        centeremoji: {
+            marginTop: 50,
+            flexDirection: "column",
+            alignItems: "center",
+        },
+        emojipic: {
+            height: 80,
+            width: 90,
+        },
+        emojitext: {
+            fontWeight: "bold"
         }
 
 

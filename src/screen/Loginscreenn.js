@@ -20,9 +20,9 @@ const Loginscreenn = () => {
     
     const navigation =useNavigation();
 
-    const handledashboard = () =>{
+    const handleDashboard = () =>{
 
-        navigation.navigate("Dashboard");
+        navigation.navigate("DASHBOARD");
     
     };
 
@@ -142,7 +142,7 @@ const Loginscreenn = () => {
     <TouchableOpacity >
         <Text style={styles.Forgetpassword}>Forget Password?</Text>
     </TouchableOpacity>
-    <TouchableOpacity style={styles.loginbuttoncontainer} onPress={handledashboard}>
+    <TouchableOpacity style={styles.loginbuttoncontainer} onPress={handleDashboard}>
         <Text style={styles.loginbuttontext}>Login</Text>
     </TouchableOpacity>
     <Text style={styles.continuetext}>or continue with</Text>
