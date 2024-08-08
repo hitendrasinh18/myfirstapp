@@ -1,13 +1,14 @@
 import React from "react";
-import {View, } from "react-native";
+import {View, Text} from "react-native";
 
 
 const Genie= () => {
 
-    <View>
+ return(   <View>
 
-
+<Text>genie</Text>
     </View>
+ )
 }
 
 export default Genie;

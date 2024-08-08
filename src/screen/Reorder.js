@@ -1,13 +1,14 @@
 import React from "react";
-import {View, } from "react-native";
+import {View, Text} from "react-native";
 
 
 const Reorder= () => {
 
-    <View>
+  return(  <View>
 
-
+<Text>Reorder</Text>
     </View>
+  )
 }
 
 export default Reorder;

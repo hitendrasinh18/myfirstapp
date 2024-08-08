@@ -8,18 +8,49 @@ import { colorss } from '../utils/colorss';
 // import { faCaretDown } from "@fortawesome/free-solid-svg-icons/faCaretDown"
 // import { faPerson } from "@fortawesome/free-solid-svg-icons/faPerson"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useNavigation } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
-import Homescreen from "./Homescreen";
-import Loginscreenn from "./Loginscreenn";
+// import Homescreen from "./Homescreen";
+// import Loginscreenn from "./Loginscreenn";
 import Fooddelivery from "./Fooddelivery";
 import Instamart from "./Instamart";
 import Dineout from "./Dineout";
 import Reorder from "./Reorder";
 import Genie from "./Genie";
 
+
+
 const Dashboard = () => {
 
+
+    const navigation = useNavigation();
+
+
+
+    const handelFooddelivery = () => {
+
+        navigation.navigate("FOODDELIVERY");
+
+    };
+
+
+    const handelInstamart = () => {
+
+        navigation.navigate("INSTAMART");
+
+    };
+
+    const handelDineout = () => {
+
+        navigation.navigate("DINEOUT");
+
+    };
+
+    const handelGenie = () => {
+
+        navigation.navigate("GENIE");
+
+    };
 
 
     const Tab = createBottomTabNavigator();
@@ -33,8 +64,14 @@ const Dashboard = () => {
         <ScrollView contentContainerStyle={styles.container}>
 
 
-            <View style={styles.contaniar}>
 
+
+            <View style={styles.contaniar}>
+                <View style={styles.searchbarbox}>
+                    <TextInput placeholder="search for Item"></TextInput>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+
+                </View>
                 {/* <View style={styles.headerpart}>
                 <View style={styles.locationpart}>
                 <FontAwesomeIcon icon={faLocationArrow} />
@@ -49,11 +86,7 @@ const Dashboard = () => {
                     </View> */}
 
 
-                <View style={styles.searchbarbox}>
-                    <TextInput placeholder="search for Item"></TextInput>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
 
-                </View>
                 <View style={styles.centeremoji}>
                     <Image source={require("../assets/emoji.png")} style={styles.emojipic}></Image>
                     <Text style={styles.emojitext}>Welcome Hitendrasinh</Text>
@@ -61,37 +94,45 @@ const Dashboard = () => {
                 </View>
                 <View style={styles.bodypart}>
                     <View style={styles.bodyfirst}>
-                        <View style={styles.bodycontaniar}>
-                            <Text style={styles.storehader}>FOOD DELIVERY</Text>
-                            <Text style={styles.restaurants}>FROM RESTAURANTS</Text>
-                            <Text style={styles.offer}>UP TO 60% OFF</Text>
-                            <Image source={require("../assets/fooddelivery.jpg")} style={styles.fooddeliveryimg}></Image>
+                        <TouchableOpacity onPress={handelFooddelivery}>
 
-                        </View>
+                            <View style={styles.bodycontaniar}>
+                                <Text style={styles.storehader}>FOOD DELIVERY</Text>
+                                <Text style={styles.restaurants}>FROM RESTAURANTS</Text>
+                                <Text style={styles.offer}>UP TO 60% OFF</Text>
+                                <Image source={require("../assets/fooddelivery.jpg")} style={styles.fooddeliveryimg}></Image>
 
-                        <View style={styles.bodycontaniar}>
-                            <Text style={styles.storehader}>INSTAMART</Text>
-                            <Text style={styles.restaurants}>GET ANYTHING INSTANTLY</Text>
-                            <Text style={styles.offer}>FREE DEL AT RS.49</Text>
-                            <Image source={require("../assets/instamart.jpg")} style={styles.instamart}></Image>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={handelInstamart}>
+                            <View style={styles.bodycontaniar}>
+                                <Text style={styles.storehader}>INSTAMART</Text>
+                                <Text style={styles.restaurants}>GET ANYTHING INSTANTLY</Text>
+                                <Text style={styles.offer}>FREE DEL AT RS.49</Text>
+                                <Image source={require("../assets/instamart.jpg")} style={styles.instamart}></Image>
 
-                        </View>
+                            </View>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.bodysecond}>
-                        <View style={styles.bodycontaniar}>
-                            <Text style={styles.storehader}>DINEOUT</Text>
-                            <Text style={styles.restaurants}>EAT OUT & SAVE MORE</Text>
-                            <Text style={styles.offer}>UP TO 50% OFF</Text>
-                            <Image source={require("../assets/dineout.png")} style={styles.dineout}></Image>
+                        <TouchableOpacity onPress={handelDineout}>
+                            <View style={styles.bodycontaniar}>
+                                <Text style={styles.storehader}>DINEOUT</Text>
+                                <Text style={styles.restaurants}>EAT OUT & SAVE MORE</Text>
+                                <Text style={styles.offer}>UP TO 50% OFF</Text>
+                                <Image source={require("../assets/dineout.png")} style={styles.dineout}></Image>
 
 
-                        </View>
-                        <View style={styles.bodycontaniar}>
-                            <Text style={styles.storehader}>GENIE</Text>
-                            <Text style={styles.restaurants}>PICK-UP & DROP</Text>
-                            <Image source={require("../assets/genie.png")} style={styles.instamart}></Image>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={handelGenie}>
+                            <View style={styles.bodycontaniar}>
+                                <Text style={styles.storehader}>GENIE</Text>
+                                <Text style={styles.restaurants}>PICK-UP & DROP</Text>
+                                <Image source={require("../assets/genie.png")} style={styles.instamart}></Image>
 
-                        </View>
+                            </View>
+                        </TouchableOpacity>
                     </View>
 
                     <View>
@@ -104,12 +145,8 @@ const Dashboard = () => {
 
             </View>
 
-
             <Tab.Navigator>
-
-
-                <Tab.Screen name="Swiggy" component={Dashboard} />
-
+                <Tab.Screen name="swiggy" component={Fooddelivery} />
                 <Tab.Screen name="Food" component={Fooddelivery} />
                 <Tab.Screen name="Instamart" component={Instamart} />
                 <Tab.Screen name="Dineout" component={Dineout} />

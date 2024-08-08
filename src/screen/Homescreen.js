@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 const Homescreen = () => {
     const navigation =useNavigation();
 
-    const handleLogin = () =>{
+    const handlelogin = () =>{
 
         navigation.navigate("LOGIN");
     
@@ -26,7 +26,7 @@ const Homescreen = () => {
 <Text style={styles.subtitle}>Lorem Ipsum has been the industry's standard dummy text.
 </Text>
  
-<TouchableOpacity style={styles.buttoncontainer}onPress={(handleLogin)} >
+<TouchableOpacity style={styles.buttoncontainer}onPress={(handlelogin)} >
                 <Text style={styles.loginbuttontext} >Login</Text>
             </TouchableOpacity>
 
