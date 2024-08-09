@@ -39,15 +39,15 @@ const App = () => {
       <NavigationContainer>
         <stack.Navigator screenOptions={{ headershown: false, }} >
 
-          <stack.Screen name={"HOME"} component={Homescreen} />
-          <stack.Screen name={"DASHBOARD"} component={Dashboard} />
-          <stack.Screen name={"LOGIN"} component={Loginscreenn} />
-          <stack.Screen name={"SIGNUP"} component={Signupscreenn} />
-          <stack.Screen name={"FOODDELIVERY"} component={Fooddelivery} />
-          <stack.Screen name={"INSTAMART"} component={Instamart} />
-          <stack.Screen name={"GENIE"} component={Genie}/>
-          <stack.Screen name={"DINEOUT"} component={Dineout} />
-          <stack.Screen name={"REORDER"} component={Reorder} />
+          <stack.Screen name={"HOME"} component={Homescreen}  />
+          <stack.Screen name={"DASHBOARD"} component={Dashboard} options={{headershown:false}} />
+          <stack.Screen name={"LOGIN"} component={Loginscreenn} options={{headershown:false}}/>
+          <stack.Screen name={"SIGNUP"} component={Signupscreenn} options={{headershown:false}} />
+          <stack.Screen name={"FOODDELIVERY"} component={Fooddelivery} options={{headershown:false}} />
+          <stack.Screen name={"INSTAMART"} component={Instamart} options={{headershown:false}} />
+          <stack.Screen name={"GENIE"} component={Genie} options={{headershown:false}}/>
+          <stack.Screen name={"DINEOUT"} component={Dineout} options={{headershown:false}} />
+          <stack.Screen name={"REORDER"} component={Reorder} options={{headershown:false}} />
 
         </stack.Navigator>
       </NavigationContainer>
