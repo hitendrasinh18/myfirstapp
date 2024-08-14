@@ -1,11 +1,14 @@
 import React from "react";
-import { View, Text, TextInput, StyleSheet,Image, ScrollView } from "react-native";
+import { View, Text, TextInput, StyleSheet,Image, ScrollView, Button } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Carousel from "../components/Carousel";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-
+import { colorss } from "../utils/colorss";
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import Hotel from "../data/Hotel";
+import Menuitem from "../components/Menuitem";
 const Fooddelivery = () => {
+    const data=Hotel;
     return (
 <SafeAreaView>
 <ScrollView >
@@ -93,32 +96,17 @@ width:60,height:60,borderRadius:30,}} source={require("../assets/vadapav.jpg")}/
      </View>
      </ScrollView>
      <Text style={{left:10}}>POPULAR BRANDS</Text>
-     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-     <View style={styles.foodstore}>
+     
 
-    <Image style={{height:200, width:150, borderRadius:10, margin:10}} source={require("../assets/food.jpg")}/>
-    <Text style={{position:"absolute", bottom:25,left:10,fontSize:20,color:"white", fontWeight:700}}> 50% OFF</Text>
-    <Text style={{position:"absolute", bottom:10 , left:10,color:"white", fontSize:10 }}> UP TO RS.100</Text>
+     <View style={{justifyContent:"space-around",flexDirection:"row"}}>
 
-</View>
-<View style={styles.foodstore}>
+      <View style={{borderWidth:1,borderRadius:15,color:"black", height:30, width:100, alignItems:"center", flexDirection:"row", justifyContent:"space-around"}}><Text >Filter</Text><MaterialCommunityIcons name="filter-variant" size={24} color="black" /></View>
+      <View style={{borderWidth:1,borderRadius:15,color:"black",height:30, width:100, alignItems:"center",flexDirection:"row", justifyContent:"space-around"}}><Text>Sort by</Text><AntDesign name="down" size={24} color="black" /></View>  
+     <View style={{borderWidth:1,borderRadius:15,color:"black",height:30, width:100, alignItems:"center"}}><Text>Fast Delivery</Text></View>   
+    </View>
 
-    <Image style={{height:200, width:150, borderRadius:10, margin:10,}} source={require("../assets/icecream.jpg")}/>
-    <Text style={{position:"absolute", bottom:25,left:10,fontSize:20,color:"white", fontWeight:700}}> 60% OFF</Text>
-    <Text style={{position:"absolute", bottom:10,left:10,fontSize:10,color:"white", }}> UP TO RS.100</Text>
-
-</View>
-<View style={styles.foodstore}>
-
-    <Image style={{height:200, width:150, borderRadius:10, margin:10,}} source={require("../assets/mithai.jpg")}/>
-     <Text style={{position:"absolute", bottom:25,left:10,fontSize:20,color:"white", fontWeight:700}}> 50% OFF</Text>
-     <Text style={{position:"absolute", bottom:10,left:10,fontSize:10,color:"white",}}> UP TO RS.100</Text>
-
-
-     </View>
-     </ScrollView>
-    
-
+{data.map((item,index) => (<Menuitem key={index} item={item}/>))}
+ 
 
 </ScrollView>
  </SafeAreaView>
@@ -145,8 +133,18 @@ foodstore:{
     flexDirection:"row",
     margin:10,
 },
+buttoncontainer: {
+    backgroundColor: colorss.primary,
+     marginTop: 20,
+     flexDirection: "row",
+     borderColor: colorss.primary,
+     width: "80%",
+     height: 60,
+     borderRadius: 80,
+     justifyContent: "center",
+     alignItems: "center",
 
    
 }
-)
+})
 
