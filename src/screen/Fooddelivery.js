@@ -36,24 +36,24 @@ const Fooddelivery = () => {
 
     {/* <View style={styles.foodimage}> */}
     <Image style={{flexDirection:"row", justifyContent:"space-between",
-width:60,height:60,borderRadius:30,}} source={require("../assets/biriyani.jpg")}/>
+width:60,height:60,borderRadius:30,}} source={require("../../assets/biriyani.jpg")}/>
 
 {/* </View> */}
     
     {/* <View style={styles.foodimage}> */}
     <Image style={{flexDirection:"row", justifyContent:"space-between",
-width:60,height:60,borderRadius:30,}} source={require("../assets/pizzas.jpg")}/>
+width:60,height:60,borderRadius:30,}} source={require("../../assets/pizzas.jpg")}/>
 
 {/* </View> */}
     {/* <View style={styles.foodimage}> */}
     <Image style={{flexDirection:"row", justifyContent:"space-between",
-width:60,height:60,borderRadius:30,}} source={require("../assets/paratha.jpg")}/>
+width:60,height:60,borderRadius:30,}} source={require("../../assets/paratha.jpg")}/>
 
 {/* </View> */}
     
     {/* <View style={styles.foodimage}> */}
     <Image style={{flexDirection:"row", justifyContent:"space-between",
-width:60,height:60,borderRadius:30,}} source={require("../assets/vadapav.jpg")}/>
+width:60,height:60,borderRadius:30,}} source={require("../../assets/vadapav.jpg")}/>
 
 {/* </View> */}
 
@@ -76,20 +76,20 @@ width:60,height:60,borderRadius:30,}} source={require("../assets/vadapav.jpg")}/
      
 <ScrollView horizontal showsHorizontalScrollIndicator={false}>
      <View style={styles.foodstore}>
-    <Image style={{height:200, width:150, borderRadius:10, margin:10}} source={require("../assets/food.jpg")}/>
+    <Image style={{height:200, width:150, borderRadius:10, margin:10}} source={require("../../assets/food.jpg")}/>
     <Text style={{position:"absolute", bottom:25,left:10,fontSize:20,color:"white", fontWeight:700}}> 50% OFF</Text>
     <Text style={{position:"absolute", bottom:10 , left:10,color:"white", fontSize:10 }}> UP TO RS.100</Text>
 </View>
 <View style={styles.foodstore}>
 
-    <Image style={{height:200, width:150, borderRadius:10, margin:10,}} source={require("../assets/icecream.jpg")}/>
+    <Image style={{height:200, width:150, borderRadius:10, margin:10,}} source={require("../../assets/icecream.jpg")}/>
     <Text style={{position:"absolute", bottom:25,left:10,fontSize:20,color:"white", fontWeight:700}}> 60% OFF</Text>
     <Text style={{position:"absolute", bottom:10,left:10,fontSize:10,color:"white", }}> UP TO RS.100</Text>
 
 </View>
 <View style={styles.foodstore}>
 
-    <Image style={{height:200, width:150, borderRadius:10, margin:10,}} source={require("../assets/mithai.jpg")}/>
+    <Image style={{height:200, width:150, borderRadius:10, margin:10,}} source={require("../../assets/mithai.jpg")}/>
      <Text style={{position:"absolute", bottom:25,left:10,fontSize:20,color:"white", fontWeight:700}}> 50% OFF</Text>
      <Text style={{position:"absolute", bottom:10,left:10,fontSize:10,color:"white",}}> UP TO RS.100</Text>
 

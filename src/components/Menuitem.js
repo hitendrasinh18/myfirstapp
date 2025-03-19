@@ -3,7 +3,7 @@ import {View, Text, Pressable,Image} from "react-native";
 
 
 const Menuitem= ({item}) => {
-    console.log(item)
+    // console.log(item)
     return(
 
     <View>
