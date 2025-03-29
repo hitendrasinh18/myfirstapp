@@ -39,8 +39,8 @@ const BottomTabNavigator = () => {
       <Tab.Screen name="Home" component={Dashboard} />
       <Tab.Screen name="Food" component={Fooddelivery} />
       <Tab.Screen name="Instamart" component={Instamart} />
-      <Tab.Screen name="Genie" component={Genie} />
       <Tab.Screen name="Dineout" component={Dineout} />
+      <Tab.Screen name="Genie" component={Genie} />
     </Tab.Navigator>
   );
 };

@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
+  Alert,
 } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faEnvelope, faLock, faEye } from "@fortawesome/free-solid-svg-icons";
@@ -26,27 +27,41 @@ const Loginscreenn = () => {
 
   const login = async () => {
     if (!email || !password) {
-      alert("Please enter both email and password.");
+      Alert.alert("Please enter both email and password.");
       return;
     }
-
+  
     try {
-      console.log("Login clicked");
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      // console.log("User logged in successfully!", userCredential.user);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+  
+      if (!user.emailVerified) {
+        Alert.alert(
+          "Email Not Verified",
+          "Please verify your email before logging in. Check your inbox for the verification email."
+        );
+        return;
+      }
+  
       navigation.navigate("DASHBOARD");
     } catch (error) {
       console.error("Login failed:", error.message);
-      alert("Login failed. Please check your email and password.");
+  
+      if (error.code === "auth/invalid-email") {
+        Alert.alert("Invalid email format. Please enter a valid email.");
+      } else if (error.code === "auth/user-not-found") {
+        Alert.alert("User not found. Please check your email or sign up.");
+      } else if (error.code === "auth/wrong-password") {
+        Alert.alert("Incorrect password. Please try again.");
+      } else {
+        Alert.alert("Login failed. Please check your credentials and try again.");
+      }
     }
   };
+  
 
   const handleSignup = () => {
-    navigation.navigate("SIGNUP");
+    navigation.navigate("Signup");
   };
   // const [request, response, promptAsync] = Google.useAuthRequest({
   //   androidClientId:

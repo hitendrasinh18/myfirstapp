@@ -35,32 +35,32 @@ const Dashboard = () => {
 
         {/* Services Section */}
         <View style={styles.servicesContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate("Food")} style={styles.serviceBox}>
-            <Image source={require("../../assets/fooddelivery.jpg")} style={styles.serviceImage} />
-            <Text style={styles.serviceTitle}>Food Delivery</Text>
-            <Text style={styles.serviceSubtitle}>Up to 60% OFF</Text>
-          </TouchableOpacity>
+  <TouchableOpacity onPress={() => navigation.navigate("Food")} style={styles.serviceBox}>
+    <Text style={styles.serviceTitle}>Food Delivery</Text>
+    <Image source={require("../../assets/fooddelivery.jpg")} style={styles.serviceImage} />
+    <Text style={styles.serviceSubtitle}>Up to 60% OFF</Text>
+  </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate("Instamart")} style={styles.serviceBox}>
-            <Image source={require("../../assets/instamart.jpg")} style={styles.serviceImage} />
-            <Text style={styles.serviceTitle}>Instamart</Text>
-            <Text style={styles.serviceSubtitle}>Free Delivery at ₹49</Text>
-          </TouchableOpacity>
-        </View>
+  <TouchableOpacity onPress={() => navigation.navigate("Instamart")} style={styles.serviceBox}>
+    <Text style={styles.serviceTitle}>Instamart</Text>
+    <Image source={require("../../assets/instamart.jpg")} style={styles.serviceImage} />
+    <Text style={styles.serviceSubtitle}>Free Delivery at ₹49</Text>
+  </TouchableOpacity>
+</View>
 
-        <View style={styles.servicesContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate("Dineout")} style={styles.serviceBox}>
-            <Image source={require("../../assets/dineout.png")} style={styles.serviceImage} />
-            <Text style={styles.serviceTitle}>Dineout</Text>
-            <Text style={styles.serviceSubtitle}>Save Up to 50%</Text>
-          </TouchableOpacity>
+<View style={styles.servicesContainer}>
+  <TouchableOpacity onPress={() => navigation.navigate("Dineout")} style={styles.serviceBox}>
+    <Text style={styles.serviceTitle}>Dineout</Text>
+    <Image source={require("../../assets/dineout.png")} style={styles.serviceImage} />
+    <Text style={styles.serviceSubtitle}>Save Up to 50%</Text>
+  </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate("Genie")} style={styles.serviceBox}>
-            <Image source={require("../../assets/genie.png")} style={styles.serviceImage} />
-            <Text style={styles.serviceTitle}>Genie</Text>
-            <Text style={styles.serviceSubtitle}>Pickup & Drop</Text>
-          </TouchableOpacity>
-        </View>
+  <TouchableOpacity onPress={() => navigation.navigate("Genie")} style={styles.serviceBox}>
+    <Text style={styles.serviceTitle}>Genie</Text>
+    <Image source={require("../../assets/genie.png")} style={styles.serviceImage} />
+    <Text style={styles.serviceSubtitle}>Pickup & Drop</Text>
+  </TouchableOpacity>
+</View>
 
         {/* Footer Text */}
         <View style={styles.footer}>
@@ -131,20 +131,23 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   serviceImage: {
-    height: 80,
-    width: 80,
-    resizeMode: "contain",
-    marginBottom: 10,
+    height: 150,
+    width: 150,
+   resizeMode: 'contain',
+    marginVertical: 10,  
   },
   serviceTitle: {
     fontSize: 16,
     fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 5,  
   },
   serviceSubtitle: {
     fontSize: 12,
     color: "gray",
     textAlign: "center",
   },
+  
   footer: {
     alignItems: "center",
     marginVertical: 20,

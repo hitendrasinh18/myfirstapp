@@ -6,16 +6,16 @@ const Homescreen = () => {
     const navigation = useNavigation();
 
     const handlelogin = () => {
-        navigation.navigate("LOGIN");
+        navigation.navigate("Login");
     };
 
     const handleSignup = () => {
-        navigation.navigate("SIGNUP");
+        navigation.navigate("Signup");
     };
 
     return (
         <View style={styles.container}>
-            <Image source={require("../../assets/compteruser.png")} style={styles.bannerImage} />
+            <Image source={require("../../assets/icona.png")} style={styles.bannerImage} />
             <Text style={styles.title}>Welcome Guest</Text>
             <Text style={styles.subtitle}>
                 Lorem Ipsum has been the industry's standard dummy text.
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        justifyContent: "center", // Center items vertically
-        backgroundColor: colorss.white,
+        justifyContent: "center", 
+        // backgroundColor: colorss.blue,
         paddingHorizontal: 20,
     },
     bannerImage: {

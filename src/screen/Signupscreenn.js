@@ -23,7 +23,7 @@ const Signupscreenn = () => {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    navigation.navigate("LOGIN");
+    navigation.navigate("Login");
   };
 
   const signup = async () => {
@@ -40,7 +40,7 @@ const Signupscreenn = () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-      console.log("User created successfully", user);
+      // console.log("User created successfully", user);
       Alert.alert("Account Created Successfully");
       navigation.navigate("LOGIN");
     } catch (error) {
